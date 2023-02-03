@@ -1,0 +1,50 @@
+html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AQI</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container-md">
+        <h2>Air Quality Index</h2>
+        <label for="formGroupExampleInput2" class="form-label">Particulate Matter Size</label>
+        <div class="input-group mb-3">
+            <select class="form-select" onChange="update()" id="inputs" >
+              <option selected>  </option>
+              <option value="Good">0-50</option>
+              <option value="Moderate">51-100</option>
+              <option value="Unhealthy For Sensative Groups">101-150</option>
+              <option value="Unhealthy">151-200</option>
+              <option value="Very Unhealthy">201-300</option>
+              <option value="Hazardous">301-500</option>
+            </select>
+
+          </div>
+          <div>
+            <p>
+                Results
+            </p>
+            <p>
+                <input  width="500" type="text" id="value" style=" width: 1295px; height: 34px;">
+
+            </p>
+        </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  <script> 
+    let output = document.getElementById('output');
+    function update() {
+				var select = document.getElementById('inputs');
+				var option = select.options[select.selectedIndex];
+
+				document.getElementById('value').value = option.value;
+				document.getElementById('text').value = option.text;
+			}
+
+			update();    
+  </script>
+  </body>
+
+</html>
